@@ -75,7 +75,8 @@ class _QuizzScreenState extends State<QuizzScreen> {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return ShimmerList();
             } else if (snapshot.hasError) {
-              return Text('error');
+              // print(snapshot.error);
+              return Text('error ${snapshot.error}');
             } else {
               return QuizzWidget(data: snapshot.data);
             }
